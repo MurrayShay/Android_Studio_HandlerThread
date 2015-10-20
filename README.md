@@ -42,5 +42,5 @@ Android HandlerThread 執行緒教學
 ```
 範例專案
 ---------------------------------
-#####按下按鈕，產升一個HandlerThread，執行續從1數到100000，利用Handler將每次計數值顯示在TextView中，觀察其中的變化。
-##### download link 
+#####按下按鈕，產升一個HandlerThread，執行續從1數到100000，  利用Handler將每次計數值顯示在TextView中，觀察其中的變化。
+##### [Source download link](https://github.com/MurrayShay/Android_Studio_HandlerThread/archive/master.zip)<br/>  
