@@ -3,7 +3,7 @@ Android HandlerThread 執行緒教學
 在此說明 HandlerThread 使用規則
 ---------------------------------
 #### ★Outline
-* 本篇為 Android Handler 執行緒教學的延伸應用  *<https://github.com/MurrayShay/Android_Studio_Handler> <br/>*
+* 本篇為 Android Handler 執行緒教學的延伸應用 *<https://github.com/MurrayShay/Android_Studio_Handler> <br/>*
 * 再前篇一開始提到執行續通訊可以是資料傳遞與方法傳遞，在此為一**方法傳遞**
 * HandlerThread 中擁有自己的**Looper(循環器)**和**MessageQueue(訊息佇列)**
 
@@ -31,15 +31,16 @@ Android HandlerThread 執行緒教學
 ####★HandlerThread 類別
 ###### 鍵構子
 ``` JAVA
-       HandlerThread(String name) //目前Thread一個別名
-       HandlerThread(Looper looper) //指定looper
+       HandlerThread(String name) //參數1:為Thread取一個別名
+       HandlerThread(String name, int priority) //參數2:設定其優先權
 ```
 ###### 方法**(資料傳遞)**
 ``` JAVA
-       void handlerMessage(Message msg) //處理looper所管理的MessageQueue
-       boolean sendMessage(Message msg)
-       boolean sendMessageAtFrontOfQueue(Message msg)
-       boolean sendMessageAtTime(Message msg, long uptimeMillis)
-       boolean sendMessageDelayed(Message msg, long delayMillis)
-       void removeMessages(int what) //將MessageQueue中的Message.what與參數what相符的訊息移除
+       Looper getLooper() //取的Thread的Looper
+       boolean quit()
+       boolean quitSafely() //停止處理訊息佇列的內容
 ```
+範例專案
+---------------------------------
+#####按下按鈕，產升一個HandlerThread，執行續從1數到100000，利用Handler將每次計數值顯示在TextView中，觀察其中的變化。
+##### download link 
